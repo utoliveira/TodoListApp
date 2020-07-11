@@ -1,0 +1,62 @@
+
+.btn--delete{
+    border: none;
+    background-color: transparent;
+    color: var(--cor-close-icon);
+    margin: 0px 7px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.btn--submit{
+    padding: 1px 18px;
+    border: 1px solid var(--cor-green-border);
+    background-color: var(--cor-green);
+    border-radius: 0 15px 15px 0px;
+    color: var(--cor-texto);
+    position: relative;
+    left: -1px;
+    cursor: pointer;
+    font-size: 23px;
+}
+
+.btn--submit:focus{
+    outline: none;
+}
+
+span{
+    margin: 10px;
+}
+
+.todo:nth-child(odd){
+    background-color: #f2f2f2;
+}
+
+.todo{
+    overflow: auto;
+    padding: 5px 5px 5px 10px;
+    font-family: var(--fonte-texto);
+    font-size: var(--font-size-medium);
+}
+
+.add-todo{
+    display: flex;
+    padding: 17px 20px 20px 20px;
+    border-bottom: 1px solid var(--cor-outline-container);
+    margin-bottom: 4px;
+}
+
+.add-todo__input{
+    flex-grow: 1;
+    padding: 5px 12px;
+    border-radius: 15px 0 0 15px;
+    border: 1px solid var(--cor-outline-container);
+    background-color: var(--cor-background-input);
+    font-family: var(--fonte-texto);
+    font-size: var(--font-size-medium);
+}
+
+
+.add-todo__input:focus{
+    outline: none;
+}

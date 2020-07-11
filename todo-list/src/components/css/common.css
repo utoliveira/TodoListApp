@@ -1,0 +1,20 @@
+.navbar{
+    padding: 10px;
+    background-image: linear-gradient(to right top, #0e6bc0, #4d6fd5, #7d70e5, #ab6eef, #da67f2);
+}
+
+.navbar a{
+    text-decoration: none;
+    color: var(--cor-texto);
+    margin-right: 16px;
+    font-family: var(--fonte-category);
+    font-size: 18px;
+}
+
+a.enabled{
+    color:var(--cor-texto) !important;
+}
+
+a.disabled{
+    color:var(--cor-texto-disabled) !important;
+}

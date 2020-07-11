@@ -1,0 +1,25 @@
+@font-face{
+    font-family: francois one regular ;
+    src: url("/fonts/FrancoisOne-Regular.ttf");
+}
+
+@font-face{
+    font-family: satisfy regular;
+    src: url("/fonts/Satisfy-Regular.ttf");
+}
+
+@font-face{
+    font-family: dosis regular;
+    src: url("/fonts/Dosis-Regular.ttf");
+}
+
+@font-face{
+    font-family: roboto regular;
+    src: url("/fonts/Roboto-Regular.ttf");
+}
+
+body{
+    --fonte-titulo: 'satisfy regular';
+    --fonte-category: 'francois one regular';
+    --fonte-texto: 'roboto regular';
+}
