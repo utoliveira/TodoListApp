@@ -10,10 +10,10 @@
 
 .btn--submit{
     padding: 1px 18px;
-    border: 1px solid var(--cor-btn-primary-border);
+    border:none;
     background-color: var(--cor-btn-primary);
     border-radius: 0 15px 15px 0px;
-    color: var(--cor-texto);
+    color: var( --cor-icon-btn-primary);
     position: relative;
     left: -1px;
     cursor: pointer;

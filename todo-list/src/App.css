@@ -83,6 +83,8 @@ body{
   --cor-btn-primary: #4d6fd5;
   --cor-btn-primary-border: #0e6bc0;
 
+  --cor-icon-btn-primary: white;
+
   --font-size-medium: 14px;
   --font-size-paragraph:15px;
   --font-size-title: 44px;
