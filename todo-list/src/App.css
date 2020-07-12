@@ -72,8 +72,8 @@ body{
   --cor-inside-container: white;
   --cor-close-icon: #848484e8;
 
-  --cor-green: #0e6bc0;
-  --cor-green-border: #0e6bc0;
+  --cor-btn-primary: #4d6fd5;
+  --cor-btn-primary-border: #0e6bc0;
 
   --font-size-medium: 14px;
   --font-size-paragraph:15px;
