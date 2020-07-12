@@ -36,6 +36,7 @@ span{
     overflow: auto;
     padding: 5px 5px 5px 10px;
     font-family: var(--fonte-texto);
+    color: var(--cor-texto);
     font-size: var(--font-size-medium);
 }
 
@@ -59,4 +60,12 @@ span{
 
 .add-todo__input:focus{
     outline: none;
+}
+
+.message-all-done{
+    margin: 10px;
+    text-align: center;
+    font-family: var(--fonte-texto);
+    color: var(--cor-texto);
+    font-size: var(--font-size-paragraph);
 }

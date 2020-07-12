@@ -4,13 +4,19 @@ import PropTypes from 'prop-types';
 import TodoItem from './TodoItem';
 
 export class TodoList extends Component {
-    render() {
-
-        const {markComplete, deleteItem} = this.props;
-        
+    renderTodos = (markComplete, deleteItem) =>{       
         return this.props.todos.map((todo) => (
             <TodoItem key={todo.id} item ={todo} markComplete={markComplete} deleteItem={deleteItem}/>
         ));
+    }
+
+    renderMessage = () =>{
+        return(<div className="message-all-done">Você tem tudo em dia! :) </div>);
+    }
+    
+    render() {
+        const {markComplete, deleteItem} = this.props;
+        return this.props.todos.length > 0 ? this.renderTodos(markComplete, deleteItem) : this.renderMessage();
     }
 }
 

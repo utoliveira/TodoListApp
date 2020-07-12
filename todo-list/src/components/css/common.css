@@ -5,16 +5,16 @@
 
 .navbar a{
     text-decoration: none;
-    color: var(--cor-texto);
+    color: var(--cor-tab);
     margin-right: 16px;
     font-family: var(--fonte-category);
     font-size: 18px;
 }
 
 a.enabled{
-    color:var(--cor-texto) !important;
+    color:var(--cor-tab) !important;
 }
 
 a.disabled{
-    color:var(--cor-texto-disabled) !important;
+    color:var(--cor-tab-disabled) !important;
 }
