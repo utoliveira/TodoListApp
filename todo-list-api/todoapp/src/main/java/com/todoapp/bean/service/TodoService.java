@@ -38,4 +38,15 @@ public class TodoService {
 		dto.setId(newTodo.getId());
 		return dto;
 	}
+	
+	@Transactional
+	public void changeCompleteStatus(Integer id) {
+		Todo todo = todoDao.getTodo(id);
+		todo.setCompleted(!todo.isCompleted());
+	}
+	
+	@Transactional
+	public void deleteTodo(Integer id) {
+		todoDao.delete(id);
+	}
 }

@@ -28,4 +28,16 @@ public class TodoDAO {
 		return todo;
 	}
 	
+	public Todo getTodo(Integer id) {
+		Session session = sessionFactory.getCurrentSession();
+		return session.get(Todo.class, id);
+	}
+	
+	public void delete(Integer id) {
+		Session session = sessionFactory.getCurrentSession();
+		Query query = session.createQuery("delete from Todo todo where todo.id = :id");
+		query.setParameter("id", id);
+		query.executeUpdate();
+	}
+	
 }
