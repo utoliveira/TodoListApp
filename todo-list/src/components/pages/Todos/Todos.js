@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TodoList from './TodoList'
 import AddTodo from './AddTodo';
-import {v4} from 'uuid';
+import Axios from 'axios';
 
 export class Todos extends Component {
     state = {
@@ -9,26 +9,21 @@ export class Todos extends Component {
     }
 
     componentDidMount(){
-        this.setState({todos:[
-            {
-                id: 1,
-                text: 'Faz isso uai',
-                completed: false
-            },
-            {
-                id: 2,
-                text: 'Faz isso uai',
-                completed: false
-            }
-        ]});
+        Axios.get("http://localhost:8080/todoapp/todo/all")
+            .then(res => {this.setState({todos: res.data.content})});
     }
 
     addTodo = (text) =>{
-        const newTodo = {id: v4(), text: text, completed: false }
-        this.setState({todos:[newTodo, ...this.state.todos]});
+
+        Axios.post("http://localhost:8080/todoapp/todo/add", {text: text, completed: false})
+            .then(res => {this.setState({todos:[res.data.content, ...this.state.todos]})})
+            .catch(error => console.log("Errou ein", error))
+
+        //this.setState({todos:[newTodo, ...this.state.todos]});
     }
 
     markComplete = (id) => {
+        Axios.put("http://localhost:8080/todoapp/todo/markComplete",{id: id})
         this.setState({todos: this.state.todos.map( todo => {
             if(todo.id === id){
                 todo.completed = !todo.completed
