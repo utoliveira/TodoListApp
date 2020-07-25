@@ -3,19 +3,24 @@ import TodoList from './TodoList'
 import AddTodo from './AddTodo';
 import Axios from 'axios';
 
+const API_HOST = 'localhost';
+
 export class Todos extends Component {
+
+    
+    
     state = {
         todos: [] 
     }
 
     componentDidMount(){
-        Axios.get("http://localhost:8080/todoapp/todo/all")
+        Axios.get(`http://${API_HOST}:8080/todoapp/todo/all`)
             .then(res => {this.setState({todos: res.data.content})});
     }
 
     addTodo = (text) =>{
 
-        Axios.post("http://localhost:8080/todoapp/todo/add", {text: text, completed: false})
+        Axios.post(`http://${API_HOST}/todoapp/todo/add"`, {text: text, completed: false})
             .then(res => {this.setState({todos:[res.data.content, ...this.state.todos]})})
             .catch(error => console.log("Errou ein", error))
 
@@ -23,7 +28,14 @@ export class Todos extends Component {
     }
 
     markComplete = (id) => {
-        Axios.put("http://localhost:8080/todoapp/todo/markComplete",{id: id})
+        Axios.put(`http://${API_HOST}:8080/todoapp/todo/changeComplete/${id}`)
+            .then(res => this.markCompleteChange(id, res))
+            .catch(err => console.log("errouuu", err));
+
+    }
+
+    markCompleteChange = (id, res) => {
+        console.log(res);
         this.setState({todos: this.state.todos.map( todo => {
             if(todo.id === id){
                 todo.completed = !todo.completed
@@ -32,8 +44,11 @@ export class Todos extends Component {
         })})
     }
 
+
     deleteItem = (id) =>{
-        this.setState({todos: [...this.state.todos.filter( todo => todo.id !== id)]});
+        Axios.delete(`http://${API_HOST}:8080/todoapp/todo/${id}`)
+        .then( res => { this.setState({todos: [...this.state.todos.filter( todo => todo.id !== id)]})})
+        .catch( err => console.log(err));
     }
 
     render() {
