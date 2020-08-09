@@ -19,5 +19,4 @@ public class RestResponse {
 		this.code = responseCode != null ? responseCode.getCode() : RestResponseCode.UNDEFINED.getCode();
 	}
 	
-	
 }

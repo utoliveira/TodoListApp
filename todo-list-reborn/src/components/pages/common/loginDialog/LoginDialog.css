@@ -1,0 +1,13 @@
+.login-panel{
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-tab);
+    min-width: 300px;
+    padding: 15px;
+
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.16);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.16);
+
+    border-radius: 10px;
+}

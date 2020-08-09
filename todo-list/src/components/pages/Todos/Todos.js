@@ -6,8 +6,6 @@ import Axios from 'axios';
 const API_HOST = 'localhost';
 
 export class Todos extends Component {
-
-    
     
     state = {
         todos: [] 

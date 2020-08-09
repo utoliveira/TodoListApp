@@ -5,7 +5,7 @@
 }
 
 body{
-  background-color: var(--cor-background);
+  background-color: var(--color-background);
 }
 
 .todos-page{
@@ -33,7 +33,6 @@ body{
     margin-top: 0;
   }
 }
-
 
 .page-content{
   padding: 10px 15px 15px 15px;
@@ -74,7 +73,7 @@ body{
   --cor-tab-disabled:#d6d6d6;
   --cor-texto: #3a3939;
   --cor-subtitle: #2b2b2bf7;
-  --cor-background: #06295c0d;
+  --cor-background:#92928a21;;
   --cor-outline-container: #b1b1b1;
   --cor-background-input: #f7f7f7;
   --cor-inside-container: white;

@@ -1,0 +1,128 @@
+@font-face{
+    font-family: francois one regular ;
+    src: url("/fonts/FrancoisOne-Regular.ttf");
+}
+
+@font-face{
+    font-family: satisfy regular;
+    src: url("/fonts/Satisfy-Regular.ttf");
+}
+
+@font-face{
+    font-family: dosis regular;
+    src: url("/fonts/Dosis-Regular.ttf");
+}
+
+@font-face{
+    font-family: roboto regular;
+    src: url("/fonts/Roboto-Regular.ttf");
+}
+
+body {
+    margin: 0;
+}
+
+
+.page-content{
+    padding: 10px 15px 15px 15px;
+}
+
+h1.brand{
+    color: var(--color-title);
+    text-align: center;
+    font-family: var(--font-titulo);
+    font-size: var(--font-size-title);
+}
+  
+h2{
+    margin-bottom: 4px;
+    color: var(--color-subtitle);
+    font-size: var(--font-size-subtitle);
+    font-family: var(--font-texto);
+}
+  
+p {
+    font-size: var(--font-size-paragraph);
+    color: var(--color-texto);
+    font-family: var(--font-texto);
+}
+
+
+.todos-container{
+    margin-top: 20px;
+    border: 1px solid var(--color-outline-container);
+    border-radius: 10px;
+    width: 700px;
+    overflow: hidden;
+    background-color: var(--color-inside-container);
+    -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.16);
+    -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.16);
+    box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.16);
+}
+
+@media only screen and (max-width: 700px) {
+    .todos-container {
+      border-radius: 0;
+      border:none;
+      border-bottom: 1px solid var(--color-outline-container);
+      margin-top: 0;
+    }
+  }
+
+input[type="text"], input[type="password"]{
+    padding: 6px 10px;
+    display: block;
+    min-width: 210px;
+
+}
+
+input[type="text"]:focus, input[type="password"]:focus{
+    outline: none;
+}
+
+.btn-primary{
+    padding: 7px;
+    min-width: 125px;
+}
+
+button:focus{
+    outline: none;
+  }
+  
+html{
+    --color-white: white;
+    --grey-lighter: #929292;
+
+    --font-titulo: 'satisfy regular';
+    --font-category: 'francois one regular';
+    --font-texto: 'roboto regular';
+
+    --color-title: white;
+    --color-tab: white;
+    --color-tab-disabled:#d6d6d6;
+    --color-texto: #3a3939;
+    --color-subtitle: #2b2b2bf7;
+    --color-background: #92928a21;
+    --color-outline-container: #b1b1b1;
+    --color-background-input: #f7f7f7;
+    --color-inside-container: white;
+  
+    --color-btn-primary: #4d6fd5;
+    --color-icon-btn-primary: white;
+  
+    --font-size-medium: 14px;
+    --font-size-paragraph:15px;
+    --font-size-title: 44px;
+    --font-size-subtitle:22px;
+}
+
+
+.container{
+    background-color: var(--color-background);
+    height:100%;
+    width: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}

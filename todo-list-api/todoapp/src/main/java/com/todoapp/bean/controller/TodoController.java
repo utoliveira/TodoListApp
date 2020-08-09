@@ -4,6 +4,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,26 +30,26 @@ public class TodoController {
 	private TodoService todoService;
 	
 	@GetMapping("/all")
-	public RestResponse getAllTodos(HttpServletResponse response){
-		return new RestResponse(RestResponseCode.SUCCESS, todoService.getAllTodos());
+	public ResponseEntity<?> getAllTodos(HttpServletResponse response){
+		return  ResponseEntity.ok(new RestResponse(RestResponseCode.SUCCESS, todoService.getAllTodos()));
 	}
 	
 	@PostMapping("/add")
-	public RestResponse addTodo(@Valid @RequestBody TodoDTO todo, HttpServletResponse response, BindingResult validation) {
+	public ResponseEntity<?> addTodo(@Valid @RequestBody TodoDTO todo, HttpServletResponse response, BindingResult validation) {
 		TodoDTO newTodo = todoService.addTodo(todo);
-		return new RestResponse(RestResponseCode.SUCCESS, newTodo);
+		return ResponseEntity.ok(new RestResponse(RestResponseCode.SUCCESS, newTodo));
 	}
 	
 	@PutMapping(path = {"/changeComplete/{id}", "/changeComplete/"})
-	public RestResponse changeCompleteStatus(@PathVariable Integer id, HttpServletResponse response) {
+	public ResponseEntity<?> changeCompleteStatus(@PathVariable Integer id, HttpServletResponse response) {
 		todoService.changeCompleteStatus(id);
-		return new RestResponse(RestResponseCode.SUCCESS, null);
+		return  ResponseEntity.ok(new RestResponse(RestResponseCode.SUCCESS, null));
 	}
 	
 	@DeleteMapping("/{id}")
-	public RestResponse deleteTodo(@PathVariable Integer id) {
+	public ResponseEntity<?> deleteTodo(@PathVariable Integer id) {
 		todoService.deleteTodo(id);
-		return new RestResponse(RestResponseCode.SUCCESS, null);
+		return ResponseEntity.ok(new RestResponse(RestResponseCode.SUCCESS, null));
 	}
 
 }
