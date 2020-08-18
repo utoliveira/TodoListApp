@@ -12,7 +12,7 @@ export const TodoProvider = props =>{
         (async () =>{
 
             api.get("/todo/all")
-                .then(res => setTodos(res.data.content))
+                .then(res => setTodos(res.data))
                 .catch(err => console.log(`errouu ${err}`));
         })();
     },[]);

@@ -17,7 +17,7 @@ const AddTodo = () => {
 
         api.post("/todo/add", {text: text})
             .then(res => {
-                setTodos([...todos, res.data.content]);
+                setTodos([...todos, res.data]);
                 setText('');
             })
             .catch(err => console.log(`errou ein ${err}`))
